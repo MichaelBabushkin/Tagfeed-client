@@ -1,4 +1,3 @@
-import React from "react";
 import AddTagContainer from "../Tag/AddTagContainer";
 import FeedContainer from "../Feed/FeedContainer";
 

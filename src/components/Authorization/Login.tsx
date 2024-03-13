@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 
 const Login = () => {
-  const { authenticated, setAuthenticated } = useContext(AuthContext);
+  const { setAuthenticated } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -23,8 +23,6 @@ const Login = () => {
             width="524.67004"
             height="531.39694"
             className="w-full"
-            alt="background image"
-            title="https://undraw.co/illustrations"
             viewBox="0 0 524.67004 531.39694"
             xmlnsXlink="http://www.w3.org/1999/xlink"
           >
@@ -307,7 +305,6 @@ const Login = () => {
             <p>or with email</p>
           </div>
           <form action="#" method="POST" className="space-y-4">
-
             <div>
               <label
                 htmlFor="email"
@@ -347,15 +344,15 @@ const Login = () => {
             </div>
           </form>
           <div className="mt-4 text-sm text-gray-600 text-center">
-              <div className="flex justify-center items-center gap-2">
-                Doesnt have an account?{" "}
-                <div
-                  onClick={() => navigate("/register")}
-                  className="text-black hover:underline font-bold hover:cursor-pointer"
-                >
-                  Register here
-                </div>
+            <div className="flex justify-center items-center gap-2">
+              Doesnt have an account?{" "}
+              <div
+                onClick={() => navigate("/register")}
+                className="text-black hover:underline font-bold hover:cursor-pointer"
+              >
+                Register here
               </div>
+            </div>
           </div>
         </div>
       </div>

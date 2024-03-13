@@ -1,17 +1,17 @@
-import { useContext } from "react";
+// import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
+// import { AuthContext } from "../../context/AuthContext";
 
 const Register = () => {
-  const { authenticated, setAuthenticated } = useContext(AuthContext);
+  // const { authenticated, setAuthenticated } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    setAuthenticated(true);
-    localStorage.setItem("session", JSON.stringify("token"));
-    navigate("/");
-  };
+  // const handleLogin = () => {
+  //   setAuthenticated(true);
+  //   localStorage.setItem("session", JSON.stringify("token"));
+  //   navigate("/");
+  // };
 
   return (
     <div className="flex h-screen">
@@ -23,8 +23,6 @@ const Register = () => {
             width="524.67004"
             height="531.39694"
             className="w-full"
-            alt="background image"
-            title="https://undraw.co/illustrations"
             viewBox="0 0 524.67004 531.39694"
             xmlnsXlink="http://www.w3.org/1999/xlink"
           >

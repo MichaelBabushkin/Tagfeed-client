@@ -58,7 +58,7 @@ const FeedContainer = () => {
   if (isLoading) return <h1>Carregando mais dados...</h1>;
 
   if (error) return <h1>Erro ao carregar os dados</h1>;
-console.log('clicked');
+  console.log("todos", todos);
 
   return (
     <>
