@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import ChevronLeftIcon from "../Icons/ChevronLeftIcon";
 import ChevronRightIcon from "../Icons/ChevronRightIcon";

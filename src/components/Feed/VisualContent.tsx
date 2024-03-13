@@ -1,4 +1,3 @@
-import React from "react";
 import PDFViewer from "./PdfViewer";
 import zipImage from "../../assets/zip_file.jpg";
 
