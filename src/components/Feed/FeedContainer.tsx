@@ -4,6 +4,7 @@ import TagContainer from "../Tag/TagContainer";
 import sampleData from "../../sampleData.json";
 import VisualContent from "./VisualContent";
 import TextContainer from "./TextContainer";
+import AddPostBtn from "./AddPostBtn";
 
 const MAX_POST_PAGE = 1;
 
@@ -91,6 +92,9 @@ const FeedContainer = () => {
             {isFetching && <div>Loading more posts...</div>}
           </div>
         ))}
+      <div className="fixed bottom-5 right-10">
+        <AddPostBtn />
+      </div>
     </>
   );
 };
