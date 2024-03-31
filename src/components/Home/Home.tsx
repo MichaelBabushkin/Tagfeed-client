@@ -1,13 +1,16 @@
 import AddTagContainer from "../Tag/AddTagContainer";
 import FeedContainer from "../Feed/FeedContainer";
 import Modal from "../Modal";
+import { ModalProvider } from "../../context/ModalContext";
 
 function Home() {
   return (
     <div>
-      <AddTagContainer />
-      <FeedContainer />
-      <Modal />
+      <ModalProvider>
+        <AddTagContainer />
+        <FeedContainer />
+        <Modal />
+      </ModalProvider>
     </div>
   );
 }

@@ -92,7 +92,7 @@ const FeedContainer = () => {
             {isFetching && <div>Loading more posts...</div>}
           </div>
         ))}
-      <div className="fixed bottom-5 right-10">
+      <div className="fixed bottom-2 right-2">
         <AddPostBtn />
       </div>
     </>
