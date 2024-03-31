@@ -6,7 +6,7 @@ export default function Modal() {
   const { open, setOpen } = useContext(ModalContext);
 
   useEffect(() => {
-    setShowModal((prev) => open);
+    setShowModal(() => open);
   }, [open]);
 
   const closeModal = () => {
