@@ -3,18 +3,20 @@ import { Dropzone, FileMosaic } from "@dropzone-ui/react";
 import { useState } from "react";
 
 function DragAndDrop() {
-  const [files, setFiles] = useState([]);
-  const [imageSrc, setImageSrc] = useState(undefined);
-  const updateFiles = (incommingFiles) => {
+  const [files, setFiles] = useState<any>([]);
+  const [, setImageSrc] = useState(undefined);
+  const updateFiles = (incommingFiles: Array<object>) => {
     console.log("incomming files", incommingFiles);
     setFiles(incommingFiles);
   };
-  const onDelete = (id) => {
-    setFiles(files.filter((x) => x.id !== id));
+  const onDelete = (id: any) => {
+    setFiles(files.filter((x:any) => x.id !== id));
   };
-  const handleSee = (imageSource) => {
+  const handleSee = (imageSource: any) => {
     setImageSrc(imageSource);
   };
+  console.log("files", files);
+
   return (
     <Dropzone
       onChange={updateFiles}
@@ -22,7 +24,7 @@ function DragAndDrop() {
       maxFiles={10}
       maxFileSize={2998000}
     >
-      {files.map((file) => (
+      {files.map((file: any) => (
         <FileMosaic
           {...file}
           onDelete={onDelete}
