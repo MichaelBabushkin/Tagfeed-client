@@ -7,7 +7,6 @@ type TextContainerProps = {
 
 function TextContainer({ description }: TextContainerProps) {
   const [readMore, setReadMore] = useState(false);
-  console.log(readMore);
 
   return (
     <>

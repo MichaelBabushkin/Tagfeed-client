@@ -1,4 +1,4 @@
-import PDFViewer from "./PdfViewer";
+import PDFViewer from "./PdfViewer/PdfViewer";
 import zipImage from "../../assets/zip_file.jpg";
 
 type VisualContentProps = {
@@ -18,7 +18,15 @@ const chooseContentType = (contentType: string, src?: string) => {
     case "zip":
       return <img src={zipImage} className="w-full" />;
     case "pdf":
-      return <PDFViewer />;
+      return (
+        <div
+          className="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20"
+          data-te-ripple-init
+          data-te-ripple-color="light"
+        >
+          <PDFViewer />
+        </div>
+      );
     case "image":
       return (
         <div

@@ -1,13 +1,23 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import TagContainer from "./TagContainer";
 
-function AddTagContainer() {
+interface AddTagContainerProps {
+  setFilteredTags: (tags: string[]) => void;
+}
+
+function AddTagContainer({ setFilteredTags }: AddTagContainerProps) {
   const [tags, setTags] = useState<string[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const addTag = () => {
+  const addTag = (event: React.MouseEvent) => {
+    event.preventDefault();
     let newTag = checkedInput();
-    if (newTag) setTags((prevTags) => [...prevTags, newTag]);
+    if (newTag) {
+      setTags((prevTags) => [...prevTags, newTag]);
+    }
+    if (inputRef.current !== null) {
+      inputRef.current.value = "";
+    }
   };
 
   const checkedInput = () => {
@@ -22,6 +32,10 @@ function AddTagContainer() {
     let filteredTagArr = tags.filter((tag) => tag !== text);
     setTags(filteredTagArr);
   };
+
+  useEffect(() => {
+    setFilteredTags(tags);
+  }, [tags]);
 
   return (
     <div>
@@ -88,12 +102,12 @@ function AddTagContainer() {
                 className="bg-gray-100 outline-none text-sm sm:text-base w-full dark:bg-gray-700 dark:text-gray-200 border-transparent focus:border-transparent focus:ring-0"
                 type="text"
                 ref={inputRef}
-                placeholder="Add a tag..."
+                placeholder="Search by tag..."
               />
               <button
                 type="submit"
                 className="flex-none rounded-md bg-white px-3.5 py-3 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white hover:scale-105"
-                onClick={addTag}
+                onClick={(e) => addTag(e)}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

@@ -15,7 +15,6 @@ function DragAndDrop() {
   const handleSee = (imageSource: any) => {
     setImageSrc(imageSource);
   };
-  console.log("files", files);
 
   return (
     <Dropzone
