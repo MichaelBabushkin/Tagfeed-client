@@ -1,5 +1,6 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { useInfiniteQuery } from "react-query";
+import { useEffect, useState } from "react";
+// import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+// import { useInfiniteQuery } from "react-query";
 import TagContainer from "../Tag/TagContainer";
 import sampleData from "../../sampleData.json";
 import VisualContent from "./VisualContent";
@@ -26,7 +27,6 @@ interface FeedContainerProps {
 }
 
 const FeedContainer = ({ filteredTags }: FeedContainerProps) => {
-
   // const observer = useRef<IntersectionObserver>();
 
   // const { data, error, fetchNextPage, hasNextPage, isFetching, isLoading } =
